@@ -1,12 +1,12 @@
 <?php
 
-require_once('../app/models/client.php');
+require_once('../app/models/compte.php');
 
-$client = new client() ; 
+$compte = new compte() ; 
 
-$listclients=$client->getclients() ;
+$listcomptes=$compte->getcomptes() ;
 
-// foreach ($listclients as $clt ) {
+// foreach ($listcomptes as $clt ) {
 //     print_r($clt->id);
 // echo "<br>";
 
@@ -14,10 +14,10 @@ $listclients=$client->getclients() ;
 
 
 
-// echo'test_client_affiche';
+// echo'test_compte_affiche';
 
 // $name="lornzi";
-// $theone=$client->getoneclient($name);
+// $theone=$compte->getonecompte($name);
 // echo "<pre>";
 // print_r($theone->id) ;
 // echo "</pre>";
@@ -29,7 +29,7 @@ $listclients=$client->getclients() ;
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/style.css">
-    <title>Clients-Info</title>
+    <title>comptes-Info</title>
 </head>
 <body>
 
@@ -39,7 +39,7 @@ $listclients=$client->getclients() ;
           <img src="../assets/img/Current_Bank_Logo.png" alt="" srcset="" />
         </div>
         <div class="right-nav">
-          <a href="">Client</a>
+          <a href="">client</a>
           <a href="">Comptes</a>
           <a href="">Transactions</a>
         </div>
@@ -61,7 +61,7 @@ $listclients=$client->getclients() ;
 
 <div class="relative w-11/12 mx-auto  shadow-md sm:rounded-lg mt-12">
 <button type="button" class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 float-right">
-<a href="add_cli.php" class="font-medium hover:underline ml:25px">Ajouter Un Client</a></button>
+<a href="add_cli.php" class="font-medium hover:underline ml:25px">Ajouter Un compte</a></button>
     <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
@@ -85,7 +85,7 @@ $listclients=$client->getclients() ;
         <tbody>
 
         <?php 
-        foreach ($listclients as $clt ) {
+        foreach ($listcomptes as $clt ) {
         ?>
        
             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">

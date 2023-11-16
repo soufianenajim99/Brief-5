@@ -61,22 +61,26 @@ $listcomptes=$compte->getcomptes() ;
 
 <div class="relative w-11/12 mx-auto  shadow-md sm:rounded-lg mt-12">
 <button type="button" class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 float-right">
-<a href="add_cli.php" class="font-medium hover:underline ml:25px">Ajouter Un compte</a></button>
+<a href="add_cmt.php" class="font-medium hover:underline ml:25px">Ajouter Un compte</a></button>
     <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
                 <th scope="col" class="px-6 py-3">
-                    Nom De Client
+                    Balance De Compte
                 </th>
                 <th scope="col" class="px-6 py-3">
-                    Prenom
+                    Devise
                 </th>
                 <th scope="col" class="px-6 py-3">
-                    Genre
+                   Id-transaction
                 </th>
                 <th scope="col" class="px-6 py-3">
-                    Nationalite
+                   RIB
                 </th>
+                <th scope="col" class="px-6 py-3">
+                   Id-Clients
+                </th>
+                
                 <th scope="col" class="px-6 py-3">
                     <span class="sr-only">Edit</span>
                 </th>
@@ -91,24 +95,30 @@ $listcomptes=$compte->getcomptes() ;
             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                 <?php 
-        echo $clt->nom;
+        echo $clt->balance;
         ?>
                 </th>
                 <td class="px-6 py-4">
                 <?php 
-        echo $clt->prenom;
+        echo $clt->devise;
         ?>
                 </td>
                 <td class="px-6 py-4">
                 <?php 
-        echo $clt->genre;
+        echo $clt->id_trans;
         ?>
                 </td>
                 <td class="px-6 py-4">
                 <?php 
-        echo $clt->nationalite;
+        echo $clt->rib;
         ?>
                 </td>
+                <td class="px-6 py-4">
+                <?php 
+        echo $clt->id_client;
+        ?>
+                </td>
+               
                 <td class="px-6 py-4 text-right">
                     <a href="add_cli.php" class="font-medium text-blue-600 dark:text-blue-500 hover:underline ml:25px">Edit</a>
                     <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline p-5">Edit</a>

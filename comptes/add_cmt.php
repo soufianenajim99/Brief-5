@@ -1,19 +1,18 @@
 <?php
-require_once('../app/models/client.php');
-$newClient = new client() ; 
+require_once('../app/models/compte.php');
+$newcompte = new compte() ; 
 
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-$nom=$_POST['nom'];
-$prenom=$_POST['prenom'];
-$nationalite=$_POST['nationalite'];
-$genre=$_POST['genre'];
-$dateNaissance=$_POST['dateNaissance'];
+$balance=$_POST['balance'];
+$devise=$_POST['devise'];
+$transe=$_POST['transe'];
+$rib=$_POST['rib'];
+$clie=$_POST['clie'];
 
 
-
-$newClient->addclient($nom,$prenom,$genre,$dateNaissance,$nationalite) ;
+$newcompte->addcompte($balance,$devise,$transe,$rib,$clie) ;
   
 header('Location: index.php');
 }
@@ -34,7 +33,7 @@ header('Location: index.php');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/style.css">
-    <title>Ajouter Un Client</title>
+    <title>Ajouter Un compte</title>
 </head>
 <body>
 
@@ -68,43 +67,41 @@ header('Location: index.php');
 
 
 <div class="max-w-md mx-auto bg-white rounded p-8 shadow-md">
-    <h2 class="text-2xl font-semibold mb-4">Ajouter Un Client</h2>
+    <h2 class="text-2xl font-semibold mb-4">Ajouter Un compte</h2>
 
     <form action="" method="POST">
 
       <!-- Nom -->
       <div class="mb-4">
-        <label for="nom" class="block text-gray-700 text-sm font-bold mb-2">Nom:</label>
-        <input type="text" id="nom" name="nom" class="w-full p-2 border rounded" required>
+        <label for="nom" class="block text-gray-700 text-sm font-bold mb-2">Balance:</label>
+        <input type="text" id="nom" name="balance" class="w-full p-2 border rounded" required>
       </div>
 
       <!-- Prenom -->
       <div class="mb-4">
-        <label for="prenom" class="block text-gray-700 text-sm font-bold mb-2">Prenom:</label>
-        <input type="text" id="prenom" name="prenom" class="w-full p-2 border rounded">
-      </div>
-
-      <!-- Nationalite -->
-      <div class="mb-4">
-        <label for="nationalite" class="block text-gray-700 text-sm font-bold mb-2">Nationalite:</label>
-        <input type="text" id="nationalite" name="nationalite" class="w-full p-2 border rounded">
+        <label for="prenom" class="block text-gray-700 text-sm font-bold mb-2">Devise:</label>
+        <input type="text" id="prenom" name="devise" class="w-full p-2 border rounded">
       </div>
 
       <!-- Genre -->
       <div class="mb-4">
-        <label for="genre" class="block text-gray-700 text-sm font-bold mb-2">Genre:</label>
-        <select id="genre" name="genre" class="w-full p-2 border rounded">
-          <option value="male">Male</option>
-          <option value="female">Female</option>
+        <label for="genre" class="block text-gray-700 text-sm font-bold mb-2">Id-trans:</label>
+        <select id="genre" name="transe" class="w-full p-2 border rounded">
+        <option value="1">1</option>
+          <option value="2">2</option>
         </select>
       </div>
 
-      <!-- Date de Naissance -->
-      <div class="mb-4">
-        <label for="dateNaissance" class="block text-gray-700 text-sm font-bold mb-2">Date de Naissance:</label>
-        <input type="date" id="dateNaissance" name="dateNaissance" class="w-full p-2 border rounded">
+       <!-- Genre -->
+       <div class="mb-4">
+        <label for="genre" class="block text-gray-700 text-sm font-bold mb-2">Id-clie:</label>
+        <select id="genre" name="clie" class="w-full p-2 border rounded">
+          <option value="1">1</option>
+          <option value="2">2</option>
+        </select>
       </div>
 
+  
       <!-- Submit Button -->
       <div>
         <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Submit</button>

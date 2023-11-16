@@ -4,18 +4,18 @@ $newcompte = new compte() ;
 
 
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-$balance=$_POST['balance'];
-$devise=$_POST['devise'];
-$transe=$_POST['transe'];
-$rib=$_POST['rib'];
-$clie=$_POST['clie'];
+// if ($_SERVER["REQUEST_METHOD"] == "POST") {
+// $balance=$_POST['balance'];
+// $devise=$_POST['devise'];
+// $transe=$_POST['transe'];
+// $rib=$_POST['rib'];
+// $clie=$_POST['clie'];
 
 
-$newcompte->addcompte($balance,$devise,$transe,$rib,$clie) ;
+$newcompte->addcompte(46,45,1,79797,2) ;
   
-header('Location: index.php');
-}
+// header('Location: index.php');
+// }
 
 
 
@@ -81,6 +81,11 @@ header('Location: index.php');
       <div class="mb-4">
         <label for="prenom" class="block text-gray-700 text-sm font-bold mb-2">Devise:</label>
         <input type="text" id="prenom" name="devise" class="w-full p-2 border rounded">
+      </div>
+      <!-- Prenom -->
+      <div class="mb-4">
+        <label for="prenom" class="block text-gray-700 text-sm font-bold mb-2">RIB:</label>
+        <input type="text" id="prenom" name="rib" class="w-full p-2 border rounded">
       </div>
 
       <!-- Genre -->

@@ -1,12 +1,12 @@
 <?php
 
-require_once('../app/models/compte.php');
+require_once('../app/models/transaction.php');
 
-$compte = new compte() ; 
+$transaction = new transaction() ; 
 
-$listcomptes=$compte->getcomptes() ;
+$listtransactions=$transaction->gettransactions() ;
 
-// foreach ($listcomptes as $clt ) {
+// foreach ($listtransactions as $clt ) {
 //     print_r($clt->id);
 // echo "<br>";
 
@@ -14,10 +14,10 @@ $listcomptes=$compte->getcomptes() ;
 
 
 
-// echo'test_compte_affiche';
+// echo'test_transaction_affiche';
 
 // $name="lornzi";
-// $theone=$compte->getonecompte($name);
+// $theone=$transaction->getonetransaction($name);
 // echo "<pre>";
 // print_r($theone->id) ;
 // echo "</pre>";
@@ -29,7 +29,7 @@ $listcomptes=$compte->getcomptes() ;
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/style.css">
-    <title>comptes-Info</title>
+    <title>transactions-Info</title>
 </head>
 <body>
 
@@ -61,21 +61,18 @@ $listcomptes=$compte->getcomptes() ;
 
 <div class="relative w-11/12 mx-auto  shadow-md sm:rounded-lg mt-12">
 <button type="button" class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 float-right">
-<a href="add_cmt.php" class="font-medium hover:underline ml:25px">Ajouter Un compte</a></button>
+<a href="add_transa.php" class="font-medium hover:underline ml:25px">Ajouter Une transaction</a></button>
     <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
                 <th scope="col" class="px-6 py-3">
-                    Balance De Compte
+                    Montant de Transaction
                 </th>
                 <th scope="col" class="px-6 py-3">
-                    Devise
+                   Type De Transaction
                 </th>
                 <th scope="col" class="px-6 py-3">
-                   RIB
-                </th>
-                <th scope="col" class="px-6 py-3">
-                   Id-Clients
+                   ID De Compte
                 </th>
                 
                 <th scope="col" class="px-6 py-3">
@@ -86,30 +83,26 @@ $listcomptes=$compte->getcomptes() ;
         <tbody>
 
         <?php 
-        foreach ($listcomptes as $clt ) {
+        foreach ($listtransactions as $clt ) {
         ?>
        
             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                 <?php 
-        echo $clt->balance;
+        echo $clt->montant;
         ?>
                 </th>
                 <td class="px-6 py-4">
                 <?php 
-        echo $clt->devise;
+        echo $clt->type;
         ?>
                 </td>
                 <td class="px-6 py-4">
                 <?php 
-        echo $clt->rib;
+        echo $clt->id_compte;
         ?>
                 </td>
-                <td class="px-6 py-4">
-                <?php 
-        echo $clt->id_client;
-        ?>
-                </td>
+                
                 
                
                 <td class="px-6 py-4 text-right">

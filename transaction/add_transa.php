@@ -5,7 +5,7 @@ $newtransaction = new transaction() ;
 
 $cmp_trans = new compte() ; 
 
-$listcomptes=$cmp_trans->getclients() ;
+$listcomptes=$cmp_trans->getcomptes() ;
 // echo '<pre>';
 // print_r($listclients);
 // echo '</pre>';
@@ -88,8 +88,11 @@ header('Location: index.php');
 
     
       <div class="mb-4">
-        <label for="prenom" class="block text-gray-700 text-sm font-bold mb-2">Type de Transaction:</label>
-        <input type="text" id="prenom" name="type" class="w-full p-2 border rounded">
+        <label for="genre" class="block text-gray-700 text-sm font-bold mb-2">Type De Transaction : </label>
+        <select id="genre" name="type" class="w-full p-2 border rounded">
+          <option value="credit">credit</option>
+          <option value="debit">debit</option>
+        </select>
       </div>
     
        <div class="mb-4">

@@ -39,7 +39,7 @@ $listcomptes=$compte->getcomptes() ;
           <img src="../assets/img/Current_Bank_Logo.png" alt="" srcset="" />
         </div>
         <div class="right-nav">
-          <a href="">client</a>
+          <a href="../client/index.php">client</a>
           <a href="">Comptes</a>
           <a href="">Transactions</a>
         </div>
@@ -118,6 +118,7 @@ $listcomptes=$compte->getcomptes() ;
         echo $clt->id_client;
         ?>
                 </td>
+                
                
                 <td class="px-6 py-4 text-right">
                     <a href="add_cli.php" class="font-medium text-blue-600 dark:text-blue-500 hover:underline ml:25px">Edit</a>

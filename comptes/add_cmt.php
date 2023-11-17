@@ -12,7 +12,7 @@ $newcompte = new compte() ;
 // $clie=$_POST['clie'];
 
 
-$newcompte->addcompte(46,45,1,79797,2) ;
+$newcompte->addcompte(45,78,1,4564,15);
   
 // header('Location: index.php');
 // }

@@ -40,7 +40,7 @@ $listclients=$client->getclients() ;
         </div>
         <div class="right-nav">
           <a href="">Client</a>
-          <a href="">Comptes</a>
+          <a href="../comptes/index.php">Comptes</a>
           <a href="">Transactions</a>
         </div>
         <div>

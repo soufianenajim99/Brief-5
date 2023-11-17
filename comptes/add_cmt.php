@@ -1,21 +1,32 @@
 <?php
 require_once('../app/models/compte.php');
+require_once('../app/models/client.php');
 $newcompte = new compte() ; 
 
+$client_cmp = new client() ; 
+
+$listclients=$client_cmp->getclients() ;
+// echo '<pre>';
+// print_r($listclients);
+// echo '</pre>';
+// echo'<br>';
+
+foreach ($listclients as $clt ) {
+  var_dump($clt->id);
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+$balance=$_POST['balance'];
+$devise=$_POST['devise'];
+$transe=$_POST['transe'];
+$rib=$_POST['rib'];
+$clie=$_POST['clie'];
 
 
-// if ($_SERVER["REQUEST_METHOD"] == "POST") {
-// $balance=$_POST['balance'];
-// $devise=$_POST['devise'];
-// $transe=$_POST['transe'];
-// $rib=$_POST['rib'];
-// $clie=$_POST['clie'];
-
-
-$newcompte->addcompte(45,78,1,4564,15);
+$newcompte->addcompte($balance,$devise,$transe,$rib,$clie);
   
-// header('Location: index.php');
-// }
+header('Location: index.php');
+}
 
 
 
@@ -101,8 +112,15 @@ $newcompte->addcompte(45,78,1,4564,15);
        <div class="mb-4">
         <label for="genre" class="block text-gray-700 text-sm font-bold mb-2">Id-clie:</label>
         <select id="genre" name="clie" class="w-full p-2 border rounded">
-          <option value="1">1</option>
-          <option value="2">2</option>
+
+        <?php 
+        foreach ($listclients as $clt ) {
+          echo '<option value="' . $clt->id . '">' . $clt->id . '</option>';
+        ?>
+
+          <?php
+        }
+        ?>
         </select>
       </div>
 

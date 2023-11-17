@@ -67,10 +67,9 @@ public function getclientinfo($id){
         return null;
     }
     
-    $query = "SELECT compte.*
+    $query = "SELECT *
     FROM compte
-    JOIN client ON compte.id_client = client.id
-    WHERE client.id = :id;
+    WHERE id_client = :id;
     ";
 
 
@@ -80,7 +79,7 @@ public function getclientinfo($id){
         ":id" => $id,
        ]);
     
-    $data=$stmt->fetch(PDO::FETCH_OBJ);
+    $data=$stmt->fetchAll(PDO::FETCH_ASSOC);
      if(!$data){
         return "Data not Found 404";
      }

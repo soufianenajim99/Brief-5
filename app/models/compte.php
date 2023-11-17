@@ -37,27 +37,29 @@ public function getcomptes(){
    return $data_comptes;
 }
 
-// public function getonecompte($nom){
-//     $db=$this->connect();
-//     if($db==null){
-//         return null;
-//     }
+public function getcompteinfo($id){
+    $db=$this->connect();
+    if($db==null){
+        return null;
+    }
     
-//     $query = "SELECT * FROM compte WHERE nom = :nom ";
-//     $stmt = $db->prepare($query);
+    $query = "SELECT *
+    FROM transaction
+    WHERE id_compte = :id;";
+    $stmt = $db->prepare($query);
 
-//     $stmt->execute([
-//         ":nom" => $nom,
-//        ]);
+    $stmt->execute([
+        ":id" => $id,
+       ]);
     
-//     $data=$stmt->fetch(PDO::FETCH_OBJ);
-//      if(!$data){
-//         return "Data not Found 404";
-//      }
-//     $query = null;
-//     $db=null;
-//     return $data;
-// }
+    $data=$stmt->fetchall(PDO::FETCH_OBJ);
+     if(!$data){
+        return "Data not Found 404";
+     }
+    $query = null;
+    $db=null;
+    return $data;
+}
 
 
 

@@ -5,11 +5,20 @@ require_once('../app/models/client.php');
 
 $client = new client() ; 
 
-$listcomptes=$client->getclientinfo(15) ;
 
-echo "<pre>";
-print_r($listcomptes);
-echo "</pre>";
+
+$clientId=$_GET['client_id'];
+
+// echo $clientId;
+
+
+
+
+$listcomptes=$client->getclientinfo($clientId) ;
+
+// echo "<pre>";
+// print_r($listcomptes);
+// echo "</pre>";
 
 // foreach ($listcomptes as $clt ) {
 //     print_r($clt->id);

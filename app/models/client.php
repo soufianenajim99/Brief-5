@@ -79,7 +79,7 @@ public function getclientinfo($id){
         ":id" => $id,
        ]);
     
-    $data=$stmt->fetchAll(PDO::FETCH_ASSOC);
+    $data=$stmt->fetchAll(PDO::FETCH_OBJ);
      if(!$data){
         return "Data not Found 404";
      }

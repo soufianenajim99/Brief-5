@@ -41,7 +41,7 @@ $listclients=$client->getclients() ;
         <div class="right-nav">
           <a href="">Client</a>
           <a href="../comptes/index.php">Comptes</a>
-          <a href="">Transactions</a>
+          <a href="../transaction/index.php">Transactions</a>
         </div>
         <div>
           <button class="logr">Login/Register</button>
@@ -110,7 +110,7 @@ $listclients=$client->getclients() ;
         ?>
                 </td>
                 <td class="px-6 py-4 text-right">
-                    <a href="add_cli.php" class="font-medium text-blue-600 dark:text-blue-500 hover:underline ml:25px">Edit</a>
+                    <a href="add_cli.php" class="font-medium text-blue-600 dark:text-blue-500 hover:underline ml:25px">Afficher les comptes associe</a>
                     <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline p-5">Edit</a>
                 </td>
             </tr>

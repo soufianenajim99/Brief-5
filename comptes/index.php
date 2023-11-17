@@ -41,7 +41,7 @@ $listcomptes=$compte->getcomptes() ;
         <div class="right-nav">
           <a href="../client/index.php">client</a>
           <a href="">Comptes</a>
-          <a href="">Transactions</a>
+          <a href="../transaction/index.php">Transactions</a>
         </div>
         <div>
           <button class="logr">Login/Register</button>

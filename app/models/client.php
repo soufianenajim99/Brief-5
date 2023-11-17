@@ -61,6 +61,36 @@ public function getoneclient($nom){
 }
 
 
+public function getclientinfo($id){
+    $db=$this->connect();
+    if($db==null){
+        return null;
+    }
+    
+    $query = "SELECT compte.*
+    FROM compte
+    JOIN client ON compte.id_client = client.id
+    WHERE client.id = :id;
+    ";
+
+
+    $stmt = $db->prepare($query);
+
+    $stmt->execute([
+        ":id" => $id,
+       ]);
+    
+    $data=$stmt->fetch(PDO::FETCH_OBJ);
+     if(!$data){
+        return "Data not Found 404";
+     }
+    $query = null;
+    $db=null;
+    return $data;
+}
+
+
+
 
 }
 

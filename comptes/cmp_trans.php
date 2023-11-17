@@ -17,7 +17,7 @@ $compte = new compte() ;
 $compteId=$_GET['compte_id'];
 $listcomptes=$compte->getcompteinfo($compteId) ;
 
-echo $compteId;
+// echo $compteId;
 
 
 

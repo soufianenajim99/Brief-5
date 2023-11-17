@@ -48,9 +48,13 @@ CREATE TABLE transaction (
     id_compte INT(11),
     FOREIGN KEY (id_compte) REFERENCES compte(id)
 );';
-   $stmt = $db->prepare($sql);
-   $stmt->execute([]);
-   $db=null;
+
+
+if ($db->query($sql) === TRUE) {
+    echo "Tables created successfully";
+} else {
+    echo "Error creating Tables(alredy exist)";
+}
    $stmt=null;
 }
  }

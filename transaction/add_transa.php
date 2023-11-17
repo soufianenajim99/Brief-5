@@ -11,9 +11,9 @@ $listcomptes=$cmp_trans->getcomptes() ;
 // echo '</pre>';
 // echo'<br>';
 
-foreach ($listcomptes as $clt ) {
-  var_dump($clt->id);
-}
+// foreach ($listcomptes as $clt ) {
+//   var_dump($clt->id);
+// }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 $montant=$_POST['montant'];

@@ -11,9 +11,9 @@ $listclients=$client_cmp->getclients() ;
 // echo '</pre>';
 // echo'<br>';
 
-foreach ($listclients as $clt ) {
-  var_dump($clt->id);
-}
+// foreach ($listclients as $clt ) {
+//   var_dump($clt->id);
+// }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 $balance=$_POST['balance'];

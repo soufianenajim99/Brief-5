@@ -14,7 +14,7 @@ $clientId=$_GET['client_id'];
 
 
 
-$listcomptes=$client->getclientinfo($clientId=0) ;
+$listcomptes=$client->getclientinfo($clientId) ;
 
 // echo "<pre>";
 // print_r($listcomptes);

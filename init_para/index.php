@@ -4,9 +4,9 @@ require_once('../app/models/init_para.php');
 $init = new Init_para() ; 
 
 $init->createdb();
-// $init->createtables();
+$init->createtables();
 
-// header('Location: ../index.php');
+header('Location: ../index.php');
 
 
 

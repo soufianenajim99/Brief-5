@@ -113,7 +113,7 @@ $listcomptes=$compte->getcomptes() ;
                 
                
                 <td class="px-6 py-4 text-right">
-                    <a href="add_cli.php" class="font-medium text-blue-600 dark:text-blue-500 hover:underline ml:25px">Edit</a>
+                    <a href="cmp_trans.php?compte_id=<?= $clt->id; ?>" class="font-medium text-blue-600 dark:text-blue-500 hover:underline ml:25px">Transactions Associe</a>
                     <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline p-5">Edit</a>
                 </td>
             </tr>

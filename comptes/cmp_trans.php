@@ -4,14 +4,26 @@ require_once('../app/models/transaction.php');
 require_once('../app/models/compte.php');
 
 
+
+
+
+
+
+
 $compte = new compte() ; 
 
-$listtransactions=$compte->getcompteinfo(47) ;
+// $listtransactions=$compte->getcompteinfo(47) ;
+
+$compteId=$_GET['compte_id'];
+$listcomptes=$compte->getcompteinfo($compteId) ;
+
+echo $compteId;
 
 
-echo "<pre>";
-print_r($listtransactions);
-echo "</pre>";
+
+// echo "<pre>";
+// print_r($listtransactions);
+// echo "</pre>";
 
 
 // foreach ($listtransactions as $clt ) {
@@ -91,7 +103,7 @@ echo "</pre>";
         <tbody>
 
         <?php 
-        foreach ($listtransactions as $clt ) {
+        foreach ($listcomptes as $clt ) {
         ?>
        
             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">

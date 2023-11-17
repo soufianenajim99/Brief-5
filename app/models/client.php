@@ -61,6 +61,10 @@ public function getoneclient($nom){
 }
 
 
+
+
+
+
 public function getclientinfo($id){
     $db=$this->connect();
     if($db==null){
@@ -88,6 +92,52 @@ public function getclientinfo($id){
     return $data;
 }
 
+
+
+
+public function updateclient($nom, $prenom, $genre,$date_naissance,$nationalite) {
+      
+    $db = $this->connect();
+
+    if($db == null) {
+        return;
+    }
+
+    $sql = "UPDATE client SET nom = :nom, genre = :genre, date_naissance = :date_naissance, nationalite = :nationalite, WHERE id = :id";
+
+    $stmt = $db->prepare($sql);
+
+    $stmt->execute([
+        ":nom" => $nom,
+        ":prenom" => $prenom,
+        ":genre" => $genre,
+        ":date_naissance"=> $date_naissance,
+        ":nationalite"=> $nationalite
+       ]);
+
+    $smt = null;
+    $db = null;
+}
+
+public function deleteClient($id) {
+  
+    $db = $this->connect();
+
+    if($db == null) {
+        return;
+    }
+
+    $sql = "DELETE FROM client WHERE id = :id";
+
+    $smt = $db->prepare($sql);
+
+    $smt->execute([
+        ":id" => $id
+    ]);
+
+    $smt = null;
+    $db = null;
+}
 
 
 

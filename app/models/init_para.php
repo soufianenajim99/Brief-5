@@ -7,11 +7,15 @@ class Init_para extends DataProvider {
      if($db==null){
          return null;
     }
-    $sql= 'CREATE DATABASE IF NOT EXISTS demo_db';
-    $stmt = $db->prepare($sql);
-    $stmt->execute([]);
+    $sql= 'CREATE DATABASE IF NOT EXISTS demoo_db';
+    
+
+    if ($db->query($sql) === TRUE) {
+        echo "Database created successfully";
+    } else {
+        echo "Error creating database(alredy exist)";
+    }
     $db=null;
-    $stmt=null;
  }
 
  public function createtables(){

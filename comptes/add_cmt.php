@@ -18,12 +18,11 @@ foreach ($listclients as $clt ) {
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 $balance=$_POST['balance'];
 $devise=$_POST['devise'];
-$transe=$_POST['transe'];
 $rib=$_POST['rib'];
 $clie=$_POST['clie'];
 
 
-$newcompte->addcompte($balance,$devise,$transe,$rib,$clie);
+$newcompte->addcompte($balance,$devise,$rib,$clie);
   
 header('Location: index.php');
 }
@@ -97,15 +96,6 @@ header('Location: index.php');
       <div class="mb-4">
         <label for="prenom" class="block text-gray-700 text-sm font-bold mb-2">RIB:</label>
         <input type="text" id="prenom" name="rib" class="w-full p-2 border rounded">
-      </div>
-
-      <!-- Genre -->
-      <div class="mb-4">
-        <label for="genre" class="block text-gray-700 text-sm font-bold mb-2">Id-trans:</label>
-        <select id="genre" name="transe" class="w-full p-2 border rounded">
-        <option value="1">1</option>
-          <option value="2">2</option>
-        </select>
       </div>
 
        <!-- Genre -->

@@ -3,17 +3,16 @@
 require_once('data_provider.php');
 
 class compte extends DataProvider {
-   public function addcompte($balance, $devise, $idTrance,$rib,$id_client){
+   public function addcompte($balance, $devise,$rib,$id_client){
     $db=$this->connect();
     if($db==null){
         return null;
    }
-   $sql= 'INSERT INTO compte (balance,devise,id_trans,rib,id_client) VALUES(:balance,:devise,:id_trans,:rib,:id_client)';
+   $sql= 'INSERT INTO compte (balance,devise,rib,id_client) VALUES(:balance,:devise,:rib,:id_client)';
    $stmt = $db->prepare($sql);
    $stmt->execute([
     ":balance" => $balance,
     ":devise" => $devise,
-    ":id_trans" => $idTrance,
     ":rib" => $rib,
     ":id_client" => $id_client
    ]);

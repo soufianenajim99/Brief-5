@@ -1,10 +1,15 @@
 <?php
 
 require_once('../app/models/compte.php');
+require_once('../app/models/client.php');
 
-$compte = new compte() ; 
+$client = new client() ; 
 
-$listcomptes=$compte->getcomptes() ;
+$listcomptes=$client->getclientinfo(15) ;
+
+echo "<pre>";
+print_r($listcomptes);
+echo "</pre>";
 
 // foreach ($listcomptes as $clt ) {
 //     print_r($clt->id);
@@ -64,7 +69,7 @@ $listcomptes=$compte->getcomptes() ;
 <div class="head-hero-cli">
         <p class="text-lg font-normal text-gray-500 lg:text-xl">Les Comptes associe a : <span class="text-blue-600 dark:text-blue-500">Marco</span></p>
     </div>
-    
+
 <button type="button" class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 float-right">
 <a href="add_cmt.php" class="font-medium hover:underline ml:25px">Ajouter Un compte</a></button>
     <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
